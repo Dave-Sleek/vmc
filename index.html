@@ -1,374 +1,190 @@
 <!DOCTYPE html>
-
 <html>
-
 <meta charset="utf-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="VMC" content="VIDEO AND MUSIC CONVERTER" title="vmc">
-
 <meta name="author" content="Dave Enyi">
-
 <meta name="Email" content="enyidavid87@gmail.com">
-
 <meta name="mobile" content="07045574466">
-
 <head>
-
 	<title>VIDEO AND MUSIC CONVERTER</title>
 </head>
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@1.1.0/css/font-awesome-animation.css">
-
-
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css" integrity="sha512-xnwMSDv7Nv5JmXb48gKD5ExVOnXAbNpBWVAXTo9BJWRJRygG8nwQI81o5bYe8myc9kiEF/qhMGPjkSsF06hyHA==" crossorigin="anonymous" />
 
-
-
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
 
-
-
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
  
-
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
-
 <body>
 
-
-
   <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-danger" aria-label="Third navbar example">
-
     <div class="container-fluid">
-
       <a class="navbar-brand" href="index.html">YouTube Converter <i class="fa fa-youtube faa-passing animated"> </i></a>
-
 <!--
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-
         <span class="navbar-toggler-icon"></span>
-
       </button>
 
-
-
       <div class="collapse navbar-collapse" id="navbarsExample03">
-
         <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-
           <li class="nav-item">
-
             <a class="nav-link active" aria-current="page" href="#">IG VIDEOS DOWNLOADER</a>
-
           </li>
-
           <li class="nav-item">
-
             <a class="nav-link active" href="#">FACEBOOK VIDEOS DOWNLOADER</a>
-
           </li>
-
         </ul>
-
       </div>
-
  -->
-
     </div>
-
   </nav>
-
   <br><br>
-
   <div class="container container-md"> 
-
  <br>
 
-
-
  <h1 class="h1 mb-3 fw-normal" style="text-align: center;">Download Video and Audio from YouTube <i class="fa fa-youtube faa-float animated"> </i></h1>
-
  
-
   <script>
-
     document.write("<p style='float:right;'>");
-
  
-
     var day = new Date();
-
  
-
     var hr = day.getHours();
-
  
-
     if (hr >= 0 && hr < 12) {
-
  
-
       document.write("Good Morning!");
-
  
-
     } else if (hr == 12) {
-
  
-
       document.write("Good Noon!");
-
  
-
     } else if (hr >= 12 && hr <= 17) {
-
  
-
       document.write("Good Afternoon!");
-
  
-
     } else {
-
  
-
       document.write("Good Evening!");
-
  
-
     }
-
  
-
     document.write("</p>");
-
   </script>
-
  <span class="card-text" id="otime"></span>
-
  
-
      <div class="card-body">
-
        <div class="row">
-
          <div class="col-md-12">
-
            <div class="form-group">
-
              <label class="text-weight"><b></b></label>
-
-             <input type="text" name="link" class="form-control link" placeholder="Search or paste link here..." required>
-
+             <input type="txt" name="link" class="form-control link" placeholder="Search or paste link here..." required>
            </div>
-
          </div>
-
        </div>
-
       <br>
-
    <form class="form-download">
-
           <div class="row">
-
             <div class="col-md-12">
-
               <div class="form-group">
-
                 <label class="text-weight"><b>Select Video Format:</b></label>
-
                 <select class="form-control formte" required>
-
                   <option selected disabled>Select Video Format</option>
-
                   <option value="mp3">Mp3</option>
-
                   <option value="mp4a">144 Mp4</option>
-
                   <option value="360">360 Mp4</option>
-
                   <option value="480">480 Mp4</option>
-
                   <option value="720">720 Mp4</option>
-
                   <option value="1080">1080 Mp4</option>
-
                   <option value="4k">4k Mp4</option>
-
                   <option value="8k">8k Mp4</option>
-
                 </select>
-
               </div>
-
             </div>
-
           </div>
-
           <div class="row">
-
             <div class="col-md-12">
-
               <div class="form-group mt-4 download-video">
-
-                <button class="btn btn-danger btn-block click-btn-down" type="submit"> Convert <i class="fa fa-refresh faa-spin animated-hover"></i></button>
-
+                <button class="btn btn-danger btn-block click-btn-down" type="submit"> Convert <i class="fa fa-gear faa-spin animated-hover"></i></button>
               </div>
-
+              <br>
+              <button type="button" class="btn btn-success btn-block" onClick="document.location.reload(true)">Refresh <i class="fa fa-refresh faa-spin animated"></i></button>
             </div>
-
           </div>
-
         </form>
-
-
-
 
 
 <script type="text/javascript">
 
-
-
   $(".click-btn-down").click(function(){
-
       var link = $(".link").val();
-
     var fromate = $(".formte").children("option:selected").val();
-
     var src =""+link+"="+fromate+"";
-
     downloadVideo(link,fromate);
-
   });
-
   function downloadVideo(link,fromate) {
-
       $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://loader.to/api/button/?url='+link+'&f='+fromate+'"></iframe>');
-
   }
-
 </script>
-
  <br>
-
  <hr>
-
  <br><br>
-
  <div class="container" align="center">
-
  <h1 class="h2 mb-3 fw-normal"><b>Youtube Video and Audio Downloader</b></h1>
-
 <p class="card-text text-muted"  style="font-style: justify; font-size: 20px;">y2videos allows you to convert & download videos from Youtube, <br>an you can also convert them to mp3 format. <br> You can easily free download thousands of videos from YouTube and other websites.</p>
-
 <br>
-
 <hr>
-
 <h1 class="h2 mb-3 fw-normal"><b>Instructions</b></h1>
-
 <ol class="list-group text-muted" style="font-size: 20px;">
-
   <li> Search by name or directly paste the link of video you want to convert</li>
-
   <li> Click on "Start" to begin converting process</li>
-
   <li> Select the video/audio format you want to download, then click "Convert" button, after converting the video will start downloading automatically</li>
-
 </ol>
-
 <br>
-
 <h1 class="h2 mb-3 fw-normal"><b>Features</b></h1>
-
 <ul class="list-unstyled text-muted" style="font-size: 20px; text-align: center;">
-
   <ul>
-
   <li> Unlimited download and free</li>
-
   <li> High-speed video converter</li>
-
   <li> No registration required</li>
-
   <li> Support downloading with all formats</li>
-
 </ul>
-
 </ul>
-
 <br>
-
  <hr>
-
  <h1 class="h1 mb-3 fw-normal"> <i class="fa fa-gift faa-shake animated"> </i></h1>
-
  <h1 class="h2 mb-3 fw-normal" style="color:#FF0000;"><b>Free Download</b></h1>
-
  <p class="card-text text-muted" style="font-style: justify; font-size: 20px;">Unlimited conversion and free download. </p>
-
  <br>
-
  <hr>
-
  <h1 class="h1 mb-3 fw-normal"> <i class="fa fa-video-camera faa-pulse animated"> </i></h1>
-
  <h1 class="h2 mb-3 fw-normal" style="color:#FF0000;"><b>Video & Audio</b></h1>
-
  <p class="card-text text-muted" style="font-style: justify; font-size: 20px;">Directly Download Video & Music. </p>
-
  <hr>
-
  <h1 class="h1 mb-3 fw-normal"> <i class="fa fa-download faa-float animated"> </i></h1>
-
  <h1 class="h2 mb-3 fw-normal" style="color:#FF0000;"><b>Easy Download</b></h1>
-
  <p class="card-text text-muted" style="font-style: justify; font-size: 20px;">Fully compatible with all browsers. </p>
-
 </div>
-
  <br><br><br><br>
-
  <footer class="footer mt-auto py-3 bg-dark">
-
   <div class="container" align="center">
-
     <span class="text-muted"> &copy; <span class="card-text" id="yr"></span> y2videos | Developed: Dave Enyi | Contact: <a class="link-danger" href="tel:+2347045574466">07045574466</a> | <a class="link-danger" href="mailto: enyidavid87@outlook.com">enyidavid87@outlook.com<script type="text/javascript"> 
-
     	let year = new Date();
-
     	document.getElementById("yr").innerHTML = year.getFullYear();
-
     </script></span>
-
   </div>
-
   <script type="text/javascript" src="assets/jquery-slim.min.js"></script>
-
 </footer>
-
 </body>
-
 <script>
-
 var myVar = setInterval(myTimer, 1000);
-
 function myTimer() {
-
 var d = new Date();
-
 document.getElementById("otime").innerHTML = d.toLocaleTimeString(); 
-
   
-
 }
-
 </script>
-
 </html>
