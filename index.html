@@ -194,18 +194,18 @@ document.getElementById("otime").innerHTML = d.toLocaleTimeString();
 <script>
     var message="Source code protected!";
   
-  function clickIE4(){
+function clickIE4(){
   if (event.button==2){
   alert(message);
   return false;
    }
   }
   
-  function clickNS4(e){
-  if (document.layers||document.getElementById&&!document.all){
-  if (e.which==2||e.which==3){
-  alert(message);
-  return false;
+function clickNS4(e){
+    if (document.layers||document.getElementById&&!document.all){
+    if (e.which==2||e.which==3){
+    alert(message);
+    return false;
   }
   }
   }
